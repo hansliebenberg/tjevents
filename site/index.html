@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ Events — Premium Event Bar Service in Cape Town</title>
+<meta name="description" content="Professional bartenders, beautiful drinks and effortless events across Cape Town and surrounds. You host — we handle the bar. Weddings, birthdays, private parties and corporate events.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TJ Events — Premium Event Bar Service in Cape Town">
+<meta property="og:description" content="Professional bartenders. Beautiful drinks. Effortless events across Cape Town and surrounds.">
+<meta property="og:image" content="https://tjevents.co.za/assets/hero.png">
+<meta property="og:url" content="https://tjevents.co.za/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://tjevents.co.za/">
+<meta name="theme-color" content="#070807">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #070807; color: #f7f4ec; font-family: 'Jost', ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+a { color: #f7f4ec; text-decoration: none; transition: color 150ms ease-out; }
+a:hover { color: #cda762; }
+@keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+[data-reveal] { opacity: 0; transform: translateY(30px); transition: opacity .9s cubic-bezier(.2,.6,.2,1), transform .9s cubic-bezier(.2,.6,.2,1); }
+[data-reveal].in { opacity: 1; transform: none; }
+.container { width: min(1180px, calc(100% - 88px)); margin: 0 auto; }
+.btn-gold { background: #cda762; color: #131208; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .12em; }
+.btn-gold:hover { background: #e5c383; color: #131208; }
+.btn-outline { border: 1px solid rgba(205,167,98,.55); padding: 14px 32px; border-radius: 999px; font-size: 12px; font-weight: 500; letter-spacing: .12em; }
+.btn-outline:hover { border-color: #cda762; color: #cda762; }
+.eyebrow { color: #cda762; text-transform: uppercase; letter-spacing: .2em; font-size: 11px; font-weight: 600; }
+.serif { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+.hero-mobile { display: none; }
+.hero-desktop { position: absolute; inset: -2%; display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 1fr); animation: heroZoom 9s cubic-bezier(.2,.6,.2,1) both; }
+.benefits-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
+.benefit { padding: 42px 26px; text-align: center; position: relative; border-right: 1px solid #2b2d2a; }
+.benefit:last-child { border-right: none; }
+.gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 225px; gap: 8px; }
+.tile { position: relative; overflow: hidden; border: 0; padding: 0; background: #111; }
+.tile .img { display: block; width: 100%; height: 100%; background-color: #0a0b0a; background-size: cover; background-position: center; transition: transform .6s cubic-bezier(.2,.6,.2,1), filter .6s ease; }
+.tile:hover .img { transform: scale(1.05); filter: brightness(1.08); }
+.tile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; background: linear-gradient(transparent, rgba(5,6,5,.85)); color: #f2d79f; font-size: 12px; letter-spacing: .08em; text-align: left; opacity: 0; transform: translateY(8px); transition: opacity .35s ease, transform .35s ease; pointer-events: none; }
+.tile:hover .cap { opacity: 1; transform: none; }
+.occasions-grid { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; }
+.occasion { padding: 18px 12px; border-right: 1px solid #2b2d2a; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #d8d4ca; display: flex; align-items: center; justify-content: center; }
+.occasion:last-child { border-right: none; }
+.contact-grid { display: grid; grid-template-columns: 1.05fr .9fr 1.15fr; gap: 46px; align-items: center; }
+.contact-info { border-left: 1px solid #2b2d2a; padding-left: 42px; display: grid; gap: 26px; transition-delay: .15s; }
+@media (max-width: 720px) {
+  .hero-mobile { display: block; position: absolute; inset: -2%; background: url('assets/hero.png') 42% 32%/cover; animation: heroZoom 9s cubic-bezier(.2,.6,.2,1) both; }
+  .hero-desktop { display: none; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .benefit { padding: 26px 30px; border-right: none; border-bottom: 1px solid #2b2d2a; }
+  .benefit:last-child { border-bottom: none; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+  .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+  .occasion { border-right: none; }
+  .occasion:nth-child(odd) { border-right: 1px solid #2b2d2a; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { border-left: none; padding-left: 0; border-top: 1px solid #2b2d2a; padding-top: 28px; }
+}
+</style>
+</head>
+<body>
+<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 40; padding: 20px 0; background: linear-gradient(rgba(7,8,7,.94) 30%, rgba(7,8,7,0));">
+<div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+  <a href="#top" style="display: flex; align-items: baseline; gap: 14px;">
+    <span class="serif" style="font-size: 44px; line-height: .8; letter-spacing: -5px;">T<span style="color: #cda762;">J</span></span>
+    <span style="font-size: 13px; letter-spacing: .35em;">EVENTS</span>
+  </a>
+  <div style="display: flex; align-items: center; font-size: 12px; letter-spacing: .14em;">
+    <a href="#contact" class="btn-gold" style="padding: 12px 26px; letter-spacing: .1em;">BOOK NOW</a>
+  </div>
+</div>
+</nav>
+<header id="top" style="position: relative; min-height: 100vh; overflow: hidden; display: flex; align-items: center; background: #050605;">
+  <div class="hero-mobile"></div>
+  <div class="hero-desktop">
+    <span style="background: url('assets/gallery-5.png') center/cover; filter: brightness(.9);"></span>
+    <span style="background: url('assets/gallery-6.png') center/cover; filter: brightness(.95);"></span>
+    <span style="background: url('assets/hero.png') center 20%/cover; grid-row: span 2; filter: brightness(1);"></span>
+    <span style="background: url('assets/gallery-2.png') center/cover; grid-row: span 2; filter: brightness(.95);"></span>
+    <span style="background: url('assets/gallery-1.png') center/cover; filter: brightness(.9);"></span>
+    <span style="background: url('assets/gallery-3.png') center/cover; filter: brightness(.9);"></span>
+  </div>
+  <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 75% 70% at 50% 52%, rgba(5,6,5,.78) 0%, rgba(5,6,5,.55) 55%, rgba(5,6,5,.25) 100%);"></div>
+  <div style="position: absolute; inset: 0; background: linear-gradient(rgba(5,6,5,.5), rgba(5,6,5,0) 28%, rgba(5,6,5,0) 72%, rgba(5,6,5,.6));"></div>
+  <div class="container" style="position: relative; z-index: 2; padding: 120px 0 80px; display: flex; justify-content: center;">
+    <div style="max-width: 900px; text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 14px; color: #cda762; text-transform: uppercase; font-size: 13px; font-weight: 600; letter-spacing: .22em; animation: fadeUp .9s .15s ease-out both;"><span style="display: inline-block; width: 52px; height: 1px; background: #cda762;"></span>Premium event bar service<span style="display: inline-block; width: 52px; height: 1px; background: #cda762;"></span></div>
+      <h1 class="serif" style="font-size: clamp(56px, 8.5vw, 110px); line-height: 1.02; margin: 24px 0 26px; animation: fadeUp .9s .3s ease-out both; text-wrap: balance;">You host.<br><em style="color: #cda762; font-style: italic;">We handle the bar.</em></h1>
+      <p style="font-size: 21px; font-weight: 300; line-height: 1.6; color: #e9e5dc; margin: 0 0 38px; animation: fadeUp .9s .45s ease-out both;">Professional bartenders. Beautiful drinks.<br>Effortless events across Cape Town and surrounds.</p>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; animation: fadeUp .9s .6s ease-out both;">
+        <a href="#contact" class="btn-gold" style="padding: 15px 34px;">BOOK YOUR EVENT</a>
+      </div>
+    </div>
+  </div>
+  <div style="position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); color: #8f918c; font-size: 11px; letter-spacing: .3em; animation: fadeUp 1s 1.2s ease-out both;">SCROLL</div>
+</header>
+<section style="background: linear-gradient(180deg, #111311, #0a0c0b); border-top: 1px solid #181a18; border-bottom: 1px solid #181a18;">
+  <div class="container benefits-grid">
+    <article data-reveal class="benefit" style="transition-delay: 0s;">
+      <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Professional Bartenders</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">Experienced, uniformed and focused on genuinely great service.</p>
+    </article>
+    <article data-reveal class="benefit" style="transition-delay: .08s;">
+      <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Beautiful Drinks</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">Quality ingredients and polished presentation, tailored to your event.</p>
+    </article>
+    <article data-reveal class="benefit" style="transition-delay: .16s;">
+      <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Tailored For Your Event</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">From intimate gatherings to big celebrations, the bar fits the occasion.</p>
+    </article>
+    <article data-reveal class="benefit" style="transition-delay: .24s;">
+      <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Effortless Experience</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">We arrive, set up, serve and keep the bar flowing while you enjoy.</p>
+    </article>
+    <article data-reveal class="benefit" style="transition-delay: .32s;">
+      <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Memorable Moments</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">Great drinks, warm service and the kind of atmosphere guests remember.</p>
+    </article>
+  </div>
+</section>
+<section id="about" style="padding: 96px 0 64px; text-align: center; background: #0a0b0a;">
+  <div data-reveal style="width: min(860px, calc(100% - 88px)); margin: 0 auto;">
+    <div class="eyebrow">Easy from the first message</div>
+    <h2 class="serif" style="font-size: clamp(34px, 4vw, 48px); margin: 14px 0 18px; line-height: 1.1;">Tell us about your event.<br><em style="color: #cda762;">We take care of the rest.</em></h2>
+    <p style="color: #c9c5bc; line-height: 1.85; font-size: 17px; font-weight: 300; margin: 0;">From planning the bar and drinks to arriving, setting up and serving your guests, TJ Events handles the details so you don't have to. You get a polished bar, professional bartenders and an easy, welcoming experience — leaving you free to enjoy the occasion with your guests.</p>
+  </div>
+</section>
+<section id="gallery" style="padding: 24px 0 84px; background: #0a0b0a;">
+  <div class="container">
+    <div data-reveal style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 26px; flex-wrap: wrap;">
+      <div>
+        <div class="eyebrow">The TJ experience</div>
+        <h2 class="serif" style="font-size: clamp(32px, 3.5vw, 44px); margin: 10px 0 0;">Good drinks. Great atmosphere.</h2>
+      </div>
+      <p style="max-width: 420px; color: #b8b4aa; margin: 0 0 8px; line-height: 1.6; font-weight: 300;">Private parties, birthdays, weddings, corporate events and everything in between.</p>
+    </div>
+    <div data-reveal class="gallery-grid">
+      <div class="tile" style="grid-column: span 2; grid-row: span 2;">
+        <span class="img" role="img" aria-label="Professional bartender pouring a cocktail" style="background-image: url('assets/gallery-2.png');"></span>
+        <span class="cap">Every pour, precise</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Three elegant cocktails overlooking Cape Town" style="background-image: url('assets/gallery-1.png');"></span>
+        <span class="cap">Sundowners over Cape Town</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Close-up of a finished cocktail with orange garnish" style="background-image: url('assets/gallery-4.png');"></span>
+        <span class="cap">Finished by hand</span>
+      </div>
+      <div class="tile" style="grid-column: span 2;">
+        <span class="img" role="img" aria-label="Elegant illuminated event bar at night" style="background-image: url('assets/gallery-3.png');"></span>
+        <span class="cap">The bar, set for the evening</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Premium bottles and glassware ready for an event" style="background-image: url('assets/gallery-5.png');"></span>
+        <span class="cap">Stocked and ready</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Selection of beautifully presented cocktails" style="background-image: url('assets/gallery-6.png');"></span>
+        <span class="cap">A menu made for the occasion</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Bartender preparing drinks for guests" style="background-image: url('assets/gallery-7.png');"></span>
+        <span class="cap">Service in motion</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="TJ Events logo" style="background-image: url('assets/tj-logo.png'); background-size: 78%; background-repeat: no-repeat;"></span>
+        <span class="cap">TJ Events</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="border-top: 1px solid #2b2d2a; border-bottom: 1px solid #2b2d2a; background: #0c0e0d; padding: 34px 0;">
+  <div class="container occasions-grid">
+    <div data-reveal class="occasion" style="transition-delay: 0s;">Weddings</div>
+    <div data-reveal class="occasion" style="transition-delay: .06s;">Birthdays</div>
+    <div data-reveal class="occasion" style="transition-delay: .12s;">Private Parties</div>
+    <div data-reveal class="occasion" style="transition-delay: .18s;">Corporate Events</div>
+    <div data-reveal class="occasion" style="transition-delay: .24s;">Year End Functions</div>
+    <div data-reveal class="occasion" style="transition-delay: .3s;">Festivals &amp; More</div>
+  </div>
+</section>
+<section id="contact" style="padding: 84px 0; background: linear-gradient(135deg, #0b0d0c, #080908);">
+  <div class="container contact-grid">
+    <div data-reveal>
+      <div class="eyebrow">Ready when you are</div>
+      <h2 class="serif" style="font-size: clamp(32px, 3.5vw, 42px); margin: 12px 0 16px; line-height: 1.12;">Let's make your event unforgettable.</h2>
+      <p style="color: #b8b4aa; line-height: 1.7; font-weight: 300; margin: 0 0 28px;">From an intimate dinner to a full celebration, we're here to take care of the bar so you can focus on your guests. Contact Tinashe to get started.</p>
+      <a href="#contact" class="btn-gold wa-link" target="_blank" rel="noopener" style="display: inline-block; padding: 15px 34px;">BOOK YOUR EVENT</a>
+    </div>
+    <div data-reveal class="contact-info">
+      <div>
+        <div style="font-size: 10px; color: #8f918c; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px;">Call / WhatsApp</div>
+        <a href="#contact" class="wa-link wa-text" target="_blank" rel="noopener" style="font-size: 18px; color: #f2d79f;"></a>
+      </div>
+      <div>
+        <div style="font-size: 10px; color: #8f918c; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px;">Email</div>
+        <a href="#contact" id="mail-link" style="font-size: 18px; color: #f2d79f;"></a>
+      </div>
+      <div>
+        <div style="font-size: 10px; color: #8f918c; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px;">Covering</div>
+        <div style="font-size: 18px; color: #f2d79f;">Cape Town &amp; surrounds</div>
+      </div>
+    </div>
+    <div data-reveal style="min-height: 360px; overflow: hidden; border: 1px solid #20221f; transition-delay: .3s;">
+      <img src="assets/contact.png" alt="Smiling TJ Events bartender at a beautifully stocked event bar" loading="lazy" style="width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block;">
+    </div>
+  </div>
+</section>
+<footer style="border-top: 1px solid #2d2a24; padding: 28px 0 32px;">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-end; gap: 25px; color: #8e918c; font-size: 12px; flex-wrap: wrap;">
+    <div>
+      <div style="color: #fff; letter-spacing: .28em; font-weight: 500;">TJ EVENTS</div>
+      <div style="margin-top: 7px; color: #b8b4aa;">You host. We handle the bar.</div>
+    </div>
+    <div>© <span id="year">2026</span> TJ Events. All rights reserved.</div>
+  </div>
+</footer>
+<script src="main.js" defer></script>
+</body>
+</html>

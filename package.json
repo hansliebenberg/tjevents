@@ -1,0 +1,12 @@
+{
+  "name": "tjevents",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "deploy": "npm run build && npx wrangler pages deploy dist --project-name=tjevents"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.3"
+  }
+}
