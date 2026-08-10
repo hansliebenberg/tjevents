@@ -13,7 +13,7 @@
   const cc = '27', local = ['81', '298', '3548'];
   const digits = cc + local.join('');
   const display = '0' + local[0] + ' ' + local[1] + ' ' + local[2];
-  const wa = 'https://wa.me/' + digits + '?text=' + encodeURIComponent('Hi TJ Events, I would like to enquire about bar service for an event.');
+  const wa = 'https://wa.me/' + digits + '?text=' + encodeURIComponent('Hi Tinashe, I would like to enquire about bar service for an event.');
   document.querySelectorAll('.wa-link').forEach((a) => { a.href = wa; });
   document.querySelector('.wa-text').textContent = display;
   const user = ['tinashe', 'mudimu', '18'].join('');
