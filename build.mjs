@@ -12,11 +12,14 @@ await mkdir(path.join(OUT, 'assets'), { recursive: true });
 // images -> webp; large sources capped (display sizes don't need more)
 const widthCaps = { 'tj-logo.png': 1200, 'contact.png': 1200 };
 const images = (await readdir(path.join(SRC, 'assets'))).filter((f) => f.endsWith('.png'));
+const assetVersions = {};
 for (const f of images) {
   const name = f.replace(/\.png$/, '.webp');
   let img = sharp(path.join(SRC, 'assets', f));
   if (widthCaps[f]) img = img.resize({ width: widthCaps[f], withoutEnlargement: true });
-  await img.webp({ quality: 82 }).toFile(path.join(OUT, 'assets', name));
+  const { data } = await img.webp({ quality: 82 }).toBuffer({ resolveWithObject: true });
+  await writeFile(path.join(OUT, 'assets', name), data);
+  assetVersions[f] = createHash('sha256').update(data).digest('hex').slice(0, 8);
 }
 
 // favicons from logo
@@ -28,7 +31,7 @@ const js = await readFile(path.join(SRC, 'main.js'));
 const hash = createHash('sha256').update(js).digest('hex').slice(0, 8);
 const html = await readFile(path.join(SRC, 'index.html'), 'utf8');
 await writeFile(path.join(OUT, 'index.html'), html
-  .replaceAll(/assets\/([\w-]+)\.png/g, 'assets/$1.webp')
+  .replaceAll(/assets\/([\w-]+)\.png/g, (m, n) => `assets/${n}.webp?v=${assetVersions[n + '.png'] ?? '0'}`)
   .replace('src="main.js"', `src="main.js?v=${hash}"`));
 
 await copyFile(path.join(SRC, 'main.js'), path.join(OUT, 'main.js'));
