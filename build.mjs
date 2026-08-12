@@ -9,12 +9,13 @@ const OUT = 'dist';
 await rm(OUT, { recursive: true, force: true });
 await mkdir(path.join(OUT, 'assets'), { recursive: true });
 
-// images -> webp (logo capped at 1200px, source is 1788x1808)
+// images -> webp; large sources capped (display sizes don't need more)
+const widthCaps = { 'tj-logo.png': 1200, 'contact.png': 1200 };
 const images = (await readdir(path.join(SRC, 'assets'))).filter((f) => f.endsWith('.png'));
 for (const f of images) {
   const name = f.replace(/\.png$/, '.webp');
   let img = sharp(path.join(SRC, 'assets', f));
-  if (f === 'tj-logo.png') img = img.resize({ width: 1200, withoutEnlargement: true });
+  if (widthCaps[f]) img = img.resize({ width: widthCaps[f], withoutEnlargement: true });
   await img.webp({ quality: 82 }).toFile(path.join(OUT, 'assets', name));
 }
 
