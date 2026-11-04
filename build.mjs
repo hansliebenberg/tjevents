@@ -10,7 +10,10 @@ await rm(OUT, { recursive: true, force: true });
 await mkdir(path.join(OUT, 'assets'), { recursive: true });
 
 // images -> webp; large sources capped (display sizes don't need more)
-const widthCaps = { 'tj-logo.png': 1200, 'contact.png': 1200, 'tj-coffee.png': 1200, 'tj-coffee-machine.png': 1200 };
+const widthCaps = { 'tj-logo.png': 1200, 'contact.png': 1200 };
+for (let n = 1; n <= 5; n++) widthCaps[`waiter-${n}.png`] = 1200;
+widthCaps['waiter-glasses.png'] = 1200;
+for (const n of [8, 9, 10]) widthCaps[`gallery-${n}.png`] = 1200;
 const images = (await readdir(path.join(SRC, 'assets'))).filter((f) => f.endsWith('.png'));
 const assetVersions = {};
 for (const f of images) {

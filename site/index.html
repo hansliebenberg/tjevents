@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TJ Events — Premium Event Bar Service in Cape Town</title>
-<meta name="description" content="Professional bartenders, barista coffee service and effortless events across Cape Town and surrounds. You host — we handle the bar. Weddings, birthdays, private parties and corporate events.">
+<title>TJ Events | Premium Event Bar Service in Cape Town</title>
+<meta name="description" content="Professional bartenders, waitering services and effortless events across Cape Town and surrounds. You host. We handle the bar. Weddings, birthdays, private parties and corporate events.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="TJ Events — Premium Event Bar Service in Cape Town">
+<meta property="og:title" content="TJ Events | Premium Event Bar Service in Cape Town">
 <meta property="og:description" content="Professional bartenders. Beautiful drinks. Effortless events across Cape Town and surrounds.">
 <meta property="og:image" content="https://tjevents.co.za/assets/hero.png">
 <meta property="og:url" content="https://tjevents.co.za/">
@@ -48,7 +48,13 @@ a:hover { color: #cda762; }
 .occasions-grid { display: grid; grid-template-columns: repeat(6, 1fr); text-align: center; }
 .occasion { padding: 18px 12px; border-right: 1px solid #2b2d2a; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #d8d4ca; display: flex; align-items: center; justify-content: center; }
 .occasion:last-child { border-right: none; }
-.coffee-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 46px; align-items: stretch; }
+.waitering-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 46px; align-items: stretch; }
+.slideshow { position: relative; overflow: hidden; border: 1px solid #20221f; min-height: 420px; }
+.slideshow img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .9s ease; }
+.slideshow img.active { opacity: 1; }
+.slideshow .dots { position: absolute; left: 0; right: 0; bottom: 14px; display: flex; justify-content: center; gap: 7px; z-index: 2; }
+.slideshow .dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(247,244,236,.35); transition: background .3s ease; }
+.slideshow .dots span.active { background: #cda762; }
 .contact-grid { display: grid; grid-template-columns: 1.05fr .9fr 1.15fr; gap: 46px; align-items: center; }
 .contact-info { border-left: 1px solid #2b2d2a; padding-left: 42px; display: grid; gap: 26px; transition-delay: .15s; }
 @media (max-width: 720px) {
@@ -61,7 +67,8 @@ a:hover { color: #cda762; }
   .occasions-grid { grid-template-columns: repeat(2, 1fr); }
   .occasion { border-right: none; }
   .occasion:nth-child(odd) { border-right: 1px solid #2b2d2a; }
-  .coffee-grid { grid-template-columns: 1fr; }
+  .waitering-grid { grid-template-columns: 1fr; }
+  .slideshow { min-height: 0; aspect-ratio: 3 / 2; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-info { border-left: none; padding-left: 0; border-top: 1px solid #2b2d2a; padding-top: 28px; }
 }
@@ -117,8 +124,8 @@ a:hover { color: #cda762; }
     </article>
     <article data-reveal class="benefit" style="transition-delay: .16s;">
       <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
-      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Barista Coffee Service</h3>
-      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">The complete café experience — premium coffee served by our baristas.</p>
+      <h3 style="font-size: 13px; line-height: 1.35; margin: 0 0 9px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;">Waitering Services</h3>
+      <p style="margin: 0; color: #b8b4aa; font-size: 13px; line-height: 1.6; font-weight: 300;">Polished, attentive waiters who keep every guest looked after.</p>
     </article>
     <article data-reveal class="benefit" style="transition-delay: .24s;">
       <span style="display: block; width: 28px; height: 1px; background: #cda762; margin: 6px auto 18px;"></span>
@@ -136,7 +143,7 @@ a:hover { color: #cda762; }
   <div data-reveal style="width: min(860px, calc(100% - 88px)); margin: 0 auto;">
     <div class="eyebrow">Easy from the first message</div>
     <h2 class="serif" style="font-size: clamp(34px, 4vw, 48px); margin: 14px 0 18px; line-height: 1.1;">Tell us about your event.<br><em style="color: #cda762;">We take care of the rest.</em></h2>
-    <p style="color: #c9c5bc; line-height: 1.85; font-size: 17px; font-weight: 300; margin: 0;">From planning the bar and drinks to arriving, setting up and serving your guests, TJ Events handles the details so you don't have to. You get a polished bar, professional bartenders and an easy, welcoming experience — leaving you free to enjoy the occasion with your guests.</p>
+    <p style="color: #c9c5bc; line-height: 1.85; font-size: 17px; font-weight: 300; margin: 0;">From planning the bar and drinks to arriving, setting up and serving your guests, TJ Events handles the details so you don't have to. You get a polished bar, professional bartenders and an easy, welcoming experience, leaving you free to enjoy the occasion with your guests.</p>
   </div>
 </section>
 <section id="gallery" style="padding: 24px 0 84px; background: #0a0b0a;">
@@ -178,6 +185,18 @@ a:hover { color: #cda762; }
         <span class="cap">Service in motion</span>
       </div>
       <div class="tile">
+        <span class="img" role="img" aria-label="Bartender spooning garnish into a row of mojitos" style="background-image: url('assets/gallery-8.png');"></span>
+        <span class="cap">Mixed to order</span>
+      </div>
+      <div class="tile" style="grid-column: span 2;">
+        <span class="img" role="img" aria-label="Smiling TJ Events bartender behind a fully stocked event bar" style="background-image: url('assets/gallery-9.png');"></span>
+        <span class="cap">At home behind any bar</span>
+      </div>
+      <div class="tile">
+        <span class="img" role="img" aria-label="Two bartenders adding the finishing touch to espresso martinis" style="background-image: url('assets/gallery-10.png');"></span>
+        <span class="cap">The finishing touch</span>
+      </div>
+      <div class="tile">
         <span class="img" role="img" aria-label="TJ Events logo" style="background-image: url('assets/tj-logo.png'); background-size: 78%; background-repeat: no-repeat;"></span>
         <span class="cap">TJ Events</span>
       </div>
@@ -194,20 +213,25 @@ a:hover { color: #cda762; }
     <div data-reveal class="occasion" style="transition-delay: .3s;">Festivals &amp; More</div>
   </div>
 </section>
-<section id="coffee" style="padding: 84px 0; background: #0a0b0a; border-top: 1px solid #181a18;">
-  <div class="container coffee-grid">
+<section id="waitering" style="padding: 84px 0; background: #0a0b0a; border-top: 1px solid #181a18;">
+  <div class="container waitering-grid">
     <div data-reveal style="display: flex; flex-direction: column;">
-      <div class="eyebrow">Barista Service</div>
-      <h2 class="serif" style="font-size: clamp(32px, 3.5vw, 44px); margin: 12px 0 16px; line-height: 1.12;">Great coffee. Beautifully served.<br><em style="color: #cda762;">Completely taken care of.</em></h2>
-      <p style="color: #c9c5bc; line-height: 1.8; font-weight: 300; margin: 0 0 18px;">We bring the complete café experience to your event. From the professional coffee machine and premium coffee to hot chocolate, cups, condiments and all the equipment needed, TJ Events supplies everything.</p>
-      <p style="color: #c9c5bc; line-height: 1.8; font-weight: 300; margin: 0 0 18px;">Our experienced baristas arrive ready to set up, serve your guests and keep the coffee flowing throughout your event. You simply provide the space. We handle the rest.</p>
-      <p style="color: #b8b4aa; line-height: 1.7; font-weight: 300; font-size: 14px; margin: 0 0 28px;">Perfect for corporate events, conferences, weddings, private functions and special occasions.</p>
+      <div class="eyebrow">Waitering Service</div>
+      <h2 class="serif" style="font-size: clamp(32px, 3.5vw, 44px); margin: 12px 0 16px; line-height: 1.12;">Attentive service. Impeccable presentation.<br><em style="color: #cda762;">Every guest looked after.</em></h2>
+      <p style="color: #c9c5bc; line-height: 1.8; font-weight: 300; margin: 0 0 18px;">Our professional waitering team brings the same polish to the floor as our bartenders bring to the bar. Uniformed, warm and discreet, they welcome your guests, circulate canapés and drinks, and keep every table immaculate throughout your event.</p>
+      <p style="color: #c9c5bc; line-height: 1.8; font-weight: 300; margin: 0 0 18px;">From plated dinners to cocktail-style receptions, we match the service to the occasion: trays in motion, glasses topped up and every detail quietly handled while you enjoy the evening.</p>
+      <p style="color: #b8b4aa; line-height: 1.7; font-weight: 300; font-size: 14px; margin: 0 0 28px;">Perfect for weddings, private dinners, corporate functions and special occasions.</p>
       <div style="flex: 1; min-height: 220px; overflow: hidden; border: 1px solid #20221f;">
-        <img src="assets/tj-coffee.png" alt="Two cappuccinos with latte art served on a dark marble bar" loading="lazy" style="width: 100%; height: 100%; min-height: 220px; object-fit: cover; display: block;">
+        <img src="assets/waiter-glasses.png" alt="Rows of polished champagne glasses lined up on a wooden bar" loading="lazy" style="width: 100%; height: 100%; min-height: 220px; object-fit: cover; display: block;">
       </div>
     </div>
-    <div data-reveal style="overflow: hidden; border: 1px solid #20221f; transition-delay: .15s; min-height: 360px;">
-      <img src="assets/tj-coffee-machine.png" alt="Smiling TJ Events barista behind a branded mobile coffee bar with professional machine, cups and condiments" loading="lazy" style="width: 100%; height: 100%; min-height: 360px; object-fit: cover; display: block;">
+    <div data-reveal class="slideshow" style="transition-delay: .15s;">
+      <img src="assets/waiter-1.png" class="active" alt="Smiling TJ Events waiter in branded apron presenting a tray of canapés" loading="lazy">
+      <img src="assets/waiter-2.png" alt="TJ Events waitress with bow tie serving canapés at an evening function" loading="lazy">
+      <img src="assets/waiter-3.png" alt="TJ Events waiter offering canapés to guests at a reception" loading="lazy">
+      <img src="assets/waiter-4.png" alt="TJ Events waiter serving guests on the floor at a corporate event" loading="lazy">
+      <img src="assets/waiter-5.png" alt="Wine bottles chilling in an ice bucket on an event table" loading="lazy">
+      <div class="dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span><span></span></div>
     </div>
   </div>
 </section>
