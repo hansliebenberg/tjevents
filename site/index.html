@@ -68,7 +68,9 @@ a:hover { color: #cda762; }
   .occasion { border-right: none; }
   .occasion:nth-child(odd) { border-right: 1px solid #2b2d2a; }
   .waitering-grid { grid-template-columns: 1fr; }
-  .slideshow { min-height: 0; aspect-ratio: 3 / 2; }
+  /* padding-bottom (not aspect-ratio): iOS Safari collapses aspect-ratio on
+     stretched grid items whose children are all absolutely positioned */
+  .slideshow { order: -1; align-self: start; min-height: 0; height: 0; padding-bottom: 125%; }
   .contact-grid { grid-template-columns: 1fr; }
   .contact-info { border-left: none; padding-left: 0; border-top: 1px solid #2b2d2a; padding-top: 28px; }
 }
